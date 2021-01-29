@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Customers;
+use App\Models\Customers;
 //use App\Staff;
 class LoginController extends Controller
 {
@@ -14,7 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return view('customer.login');
     }
 
     /**

@@ -15,10 +15,17 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('fname', 255)->comment('The name of the name ');
-            $table->string('lname', 255)->comment('The name of the name ');
-            $table->mobile('name', 255)->comment('The name of the name ');
+           // $table->integer('user_id')->unsigned();
+            $table->string('suburb', 100)->comment('The name of the name ');
+            $table->string('state', 20)->comment('The name of the name ');
+            $table->string('street', 255)->comment('The name of the name ');
+            $table->string ('mobile', 20)->comment('required|string|min:8|max:11');
             $table->timestamps();
+          //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+             $table->index(['mobile', 'user_id']);
+             $table->foreignId('user_id')->constrained('users');
+          // $table->foreignId('user_id') ->constrained()  ->onUpdate('cascade')  ->onDelete('cascade');
+           
         });
     }
 

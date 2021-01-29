@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//use App\Http\Controllers\ProductsController;
+//use ProductsController;
 // added to solve 
 //use App\Customers;
 /*
@@ -15,10 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/login','LoginController@index');
-Route::get('/register','RegisterController@index');
-Route::resource('projects', 'ProductsController');
+    return view('dashboard');
+});
+//Route::Auth ;
+//Route::get('/login','CopyLoginController@index');
+//Route::get('/register','CopyRegisterController@index');
+Route::resource('products', 'ProductsController');
+//Auth::routes();
+
+//Route::get('/dashboard', 'DashboardController@index');
 //Route::get('/login', 'LoginController@index');

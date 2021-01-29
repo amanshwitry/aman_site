@@ -40,4 +40,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+/**
+     * Get  custmer product
+     */
+
+    public function customes()
+    {
+        return $this->hasOne(Customers::class);
+    }
+
+
 }
+
+
